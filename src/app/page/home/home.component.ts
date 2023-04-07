@@ -7,14 +7,18 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  descricao = "A TuxAdvogados é uma empresa do ramo jurídico, que está sempre buscando melhorar o atendimento aos seus clientes. Pensando nisso, a empresa contratou nossos serviços para desenvolver uma aplicação para cadastro de clientes."
+  descricao = "Página imáginaria criada para atividades academicas do curso Linguagem Script Web do Senac RJ. Considera-se que está em constante desenvolvimento."
 
   listaImagem = [
-    "https://blog.ebradi.com.br/wp-content/uploads/2022/06/ebradi_ebradi_image_490.jpeg",
-    "https://s2.glbimg.com/UP2K-TqCD1WWCdfygwLK6dqQi2U=/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2022/y/d/CGYc7lR8GXcXX1nd4YOg/foto05leg-101-advoga-e1.jpg",
-    "https://www.consultoriarr.com.br/wp-content/uploads/2018/12/advogados.jpg",
-    "https://s.conjur.com.br/img/b/advogado2.jpeg",
-    "https://menezesemenezes.com.br/wp-content/uploads/2021/04/Menezes-e-Menezes-Advogados-2019-47.jpg",
+    "https://cdn.pixabay.com/photo/2015/01/08/18/26/man-593333_1280.jpg",
+    "https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_640.jpg",
+    "https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_640.jpg",
+    "https://cdn.pixabay.com/photo/2018/11/17/07/10/notebook-3820634_640.jpg",
+    "https://cdn.pixabay.com/photo/2017/01/14/10/56/people-1979261_640.jpg",
+    "https://cdn.pixabay.com/photo/2015/04/20/06/46/office-730681_640.jpg"
+
+
+
   ]
 
   i = 0

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TuxAdvogados": {
+    "TuxAdvogados-Angular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/tux-advogados",
+            "outputPath": "dist/tux-advogados-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "TuxAdvogados:build:production"
+              "browserTarget": "TuxAdvogados-Angular:build:production"
             },
             "development": {
-              "browserTarget": "TuxAdvogados:build:development"
+              "browserTarget": "TuxAdvogados-Angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TuxAdvogados:build"
+            "browserTarget": "TuxAdvogados-Angular:build"
           }
         },
         "test": {
@@ -97,6 +97,6 @@
     }
   },
   "cli": {
-    "analytics": "a46ba558-70e4-4540-8ca9-08007a2d8e88"
+    "analytics": "e0d9fbf3-19e2-479c-863c-e48b585fe33a"
   }
 }

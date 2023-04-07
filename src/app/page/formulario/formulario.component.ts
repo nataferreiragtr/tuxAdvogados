@@ -5,7 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.css']
 })
+
 export class FormularioComponent {
+
+
+
+// Feito com template driven
 
   form(formulario: any) {
     console.log(formulario.value);
