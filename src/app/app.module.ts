@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {AngularFireModule} from '@angular/fire/compat';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,8 @@ import { FooterComponent } from './component/footer/footer.component';
 import { ClientesComponent } from './page/clientes/clientes.component';
 import { environment } from 'src/environments/environments';
 import { ClienteupdateComponent } from './page/clienteupdate/clienteupdate.component';
+import { LoginComponent } from './page/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { ClienteupdateComponent } from './page/clienteupdate/clienteupdate.compo
     HeaderComponent,
     FooterComponent,
     ClientesComponent,
-    ClienteupdateComponent
+    ClienteupdateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,8 @@ import { ClienteupdateComponent } from './page/clienteupdate/clienteupdate.compo
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
