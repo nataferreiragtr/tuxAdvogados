@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { AutenticarService } from 'src/app/servico/autenticar.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,7 +18,10 @@ export class LoginComponent  implements OnInit {
   // Variavel que guarda o formulario
   formulario: FormGroup
 
-  constructor(private formBuilder: FormBuilder){}
+  constructor(
+    private formBuilder: FormBuilder,
+    private autenticaService: AutenticarService
+    ){}
 
   ngOnInit(): void {
     this.createForm();
@@ -25,15 +30,23 @@ export class LoginComponent  implements OnInit {
   // metodo chamado pelo botão formulario
   formAuth(){
     if(this.nameButtomForm == "Logar"){
-        alert ('Botão Login')
+
+        alert ("Botão Login");
+        console.log(this.formulario.value)
 
     } else if(this.nameButtomForm == "Cadastrar"){
-       alert ("Botão cadastrar");
+
+       alert ('Usuario Cadastrado');
+       this.autenticaService.cadastrarUser(this.formulario.value);
+
+
     }
 
     else {
       alert ('Opção Invalida')
     }
+
+    
   }
   
 
