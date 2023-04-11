@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { AutenticarService } from 'src/app/servico/autenticar.service';
 
@@ -20,7 +21,8 @@ export class LoginComponent  implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private autenticaService: AutenticarService
+    private autenticaService: AutenticarService,
+    private router: Router
     ){}
 
   ngOnInit(): void {
@@ -32,12 +34,23 @@ export class LoginComponent  implements OnInit {
     if(this.nameButtomForm == "Logar"){
 
         alert ("Botão Login");
-        console.log(this.formulario.value)
+        
+
+        // Autentica um usuario existente
+        this.autenticaService.autenticarUser(this.formulario.value)
+
+        // Redireciona para a pagina
+        this.router.navigate(['/home']);
 
     } else if(this.nameButtomForm == "Cadastrar"){
 
        alert ('Usuario Cadastrado');
+
+       // Cadastra um usuario para autenticar no banco de dados
        this.autenticaService.cadastrarUser(this.formulario.value);
+
+       //Direciona para a tela de login
+       this.router.navigate(['/']);
 
 
     }
@@ -65,12 +78,12 @@ export class LoginComponent  implements OnInit {
   alterar() {
     if(this.title == "Login"){
       this.title = "Cadastre-se";
-      this.nameButtomForm = " Cadastrar";
-      this.nameButtomCard = "Autenticar";
+      this.nameButtomForm = "Cadastrar";
+      this.nameButtomCard = "Já tenho conta";
     }else{
       this.title = "Login";
-      this.nameButtomCard = "Não possuo conta";
       this.nameButtomForm = "Logar";
+      this.nameButtomCard = "Não possui conta? Clique aqui";    
     }
   }
 }

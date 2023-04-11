@@ -9,7 +9,9 @@ export class AutenticarService {
 
   constructor (private angularFireAuth: AngularFireAuth)  { }
   
-  autenticarUser(){}
+  autenticarUser(user){
+    return this.angularFireAuth.signInWithEmailAndPassword(user.email, user.password);
+  }
 
   cadastrarUser (user){
     return this.angularFireAuth.createUserWithEmailAndPassword(user.email, user.password);
